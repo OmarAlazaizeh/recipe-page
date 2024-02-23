@@ -1,0 +1,229 @@
+:root {
+  /* Primary */
+  --nutmeg: hsl(14, 45%, 36%);
+  --dark-raspberry: hsl(332, 51%, 32%);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+}
+
+/* fonts */
+@font-face {
+  font-family: "outfit";
+  src: url(assets/fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: "young-serif";
+  src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--eggshell);
+  font-family: outfit;
+}
+
+.main {
+  width: 650px;
+  background: white;
+  padding: 40px;
+  margin: 100px auto;
+  border-radius: 20px;
+  .image {
+    border-radius: 20px;
+    overflow: hidden;
+    img {
+      max-width: 100%;
+    }
+  }
+  h1 {
+    margin: 20px 0;
+    font-family: young-serif;
+    font-size: 35px;
+    font-weight: normal;
+  }
+  p {
+    color: var(--wenge-brown);
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    /* font-weight: bold; */
+  }
+  .prep-time {
+    padding: 20px;
+    background-color: hsl(332deg 100% 58% / 5%);
+    border-radius: 10px;
+    margin: 25px 0;
+    h4 {
+      color: var(--dark-raspberry);
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Ingredients section */
+  .ingredients {
+    margin: 30px 0;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  h2 {
+    font-family: "young-serif";
+    color: var(--nutmeg);
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
+
+  /* list style */
+  ul {
+    list-style: none;
+    padding-left: 25px;
+    font-size: 14px;
+    color: var(--wenge-brown);
+    li {
+      position: relative;
+      margin-bottom: 10px;
+      span {
+        font-weight: bold;
+      }
+    }
+    ::before {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: var(--wenge-brown);
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
+  }
+
+  /* Instructions section */
+  .instructions {
+    margin: 30px 0;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--light-grey);
+
+    ol {
+      padding-left: 25px;
+      font-size: 14px;
+      color: var(--wenge-brown);
+      li {
+        position: relative;
+        margin-bottom: 10px;
+        font-weight: bold;
+        line-height: 1.6;
+        span {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+
+  /* Nutrition section */
+  .nutrition {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      tr {
+        td {
+          padding: 10px 20px;
+          font-size: 14px;
+          color: var(--nutmeg);
+        }
+        :last-child {
+          font-weight: bold;
+        }
+      }
+      tr:not(:last-child) {
+        border-bottom: 1px solid var(--light-grey);
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.attribution a {
+  color: var(--nutmeg);
+  /* text-decoration: none; */
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .main {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+
+    .image {
+      border-radius: 0;
+    }
+
+    > *:not(:first-child) {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .prep-time {
+      font-size: 20px;
+    }
+
+    ul {
+      font-size: 16px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .instructions {
+      ol {
+        font-size: 16px;
+      }
+    }
+
+    .nutrition {
+      table {
+        tr {
+          td {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .attribution {
+    background: white;
+    margin: 0;
+    position: static;
+    transform: translateX(0);
+    padding: 50px 80px 100px;
+    border-top: 1px solid var(--light-grey);
+    font-size: 16px;
+  }
+}
